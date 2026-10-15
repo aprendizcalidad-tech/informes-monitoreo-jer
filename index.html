@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe de Gestión SARLAFT - JER</title>
+    <!-- Aquí conectamos el diseño -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Librerías mágicas para gráficas y PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="controles">
+        <label for="filtroAno">Año:</label>
+        <select id="filtroAno">
+            <option value="2026">2026</option>
+        </select>
+
+        <label for="filtroMes">Mes:</label>
+        <select id="filtroMes">
+            <option value="Todos">Todos los meses</option>
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <!-- Agregaremos el resto luego -->
+        </select>
+
+        <button onclick="descargarPDF()">Descargar Informe en PDF</button>
+    </div>
+
+    <!-- Este es el contenedor que se convertirá en PDF -->
+    <div id="informe-contenido" class="hoja-informe">
+        <header>
+            <h1>INFORME DE GESTIÓN SARLAFT</h1>
+            <h2>OFICIAL DE CUMPLIMIENTO - JER Junto a ti</h2>
+            <p id="subtitulo-periodo">PERIODO: SELECCIONADO</p>
+        </header>
+
+        <div class="seccion-graficas">
+            <h3>MONITOREO DE GIROS BOYACÁ</h3>
+            <div class="contenedor-grafica">
+                <canvas id="graficaGirosBoyaca"></canvas>
+            </div>
+        </div>
+        <!-- Aquí irán el resto de gráficas copiando este mismo bloque -->
+    </div>
+
+    <!-- Aquí conectamos el cerebro (JavaScript) -->
+    <script src="script.js"></script>
+</body>
+</html>
